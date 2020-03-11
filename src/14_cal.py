@@ -22,3 +22,20 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+curr_month = datetime.now().month
+curr_year=  datetime.now().year
+args = sys.argv[1:]
+
+def calenDate(argument):
+  if argument[1]:
+    print(calendar.prmonth(int(argument[1]), int(argument[0])))
+  else:
+    print(calendar.prmonth(curr_year, int(argument[0])))
+
+if args:
+  calenDate(args)
+else:
+  calendar.prmonth(curr_year,curr_month)
+
+sys.exit()
